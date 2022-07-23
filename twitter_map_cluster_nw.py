@@ -15,7 +15,7 @@ def make_map(geojson_file, map_file):
 	tweet_map = folium.Map(Location=[50,5], zoom_start=5)
 	marker_cluster = folium.plugins.marker_cluster.MarkerCluster().add_to(tweet_map)
 
-	geojson_file = os.path.join('covi19.geo.json')
+	geojson_file = os.path.join('covid19.geo.json')
 	geodata = json.load(open(geojson_file))
 	for tweet in geodata['features']:
 		tweet['geometry']['coordinates'].reverse()
